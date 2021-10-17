@@ -1,0 +1,86 @@
+h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  color: #9f68e0;
+}
+
+.todo-app {
+  width: 360px;
+  text-align: center;
+  padding-top: auto;
+  position: absolute;
+  top: 30%;
+  left: 39%;
+  /* transform: translate(-50%, -50%); */
+}
+
+.add-item {
+  width: fit-content;
+  display: flex;
+}
+
+.add-item input {
+  font-size: 20px;
+  width: 280px;
+  height: 40px;
+  border: thin solid #999;
+  border-right: none;
+  padding-left: 5px;
+}
+
+.task-div {
+  height: 40px;
+  width: 360px;
+  font-size: 20px;
+  border: thin solid #999;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding-left: 5px;
+  color: #3d2c8d;
+}
+
+.add-item button {
+  width: 80px;
+  font-size: 25px;
+  background-color: #9f68e0;
+  color: #fff;
+  border: thin solid #999;
+  letter-spacing: 1px;
+}
+
+.buttons {
+  background-color: #9f68e0;
+  width: 79px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.icon {
+  font-size: 15px;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.icon:hover {
+  color: #f05454;
+}
+
+.check {
+  color: #fff;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.check:hover {
+  color: #a1dd70;
+}
+
+.done {
+  text-decoration: line-through;
+}

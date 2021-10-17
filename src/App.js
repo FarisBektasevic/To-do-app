@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import ToDo from './ToDo'
 
 function App() {
+  const [input, setInput] = useState('')
+  const [tasks, setTasks] = useState([])
+  const [counter, setCounter] = useState(1)
+
+  const inputChange = (event) => {
+    setInput(event.target.value)
+  }
+
+  const addNewTask = () => {
+    setCounter(counter + 1)
+    let task = {
+      id: counter,
+      title: input,
+      isDone: false,
+    }
+
+    if (input) {
+      setTasks([...tasks, task])
+      setInput('')
+    }
+  }
+
+  const changeTask = (id) => {
+    setTasks(
+      tasks.map((task, index) => {
+        if (task.id === id) {
+          task.isDone = !task.isDone
+        }
+        console.log(index)
+        return task
+      })
+    )
+  }
+  const deleteTask = (e) => {
+    setTasks(tasks.filter((task) => task.id !== e))
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToDo
+        input={input}
+        inputChange={inputChange}
+        addNewTask={addNewTask}
+        tasks={tasks}
+        deleteTask={deleteTask}
+        changeTask={changeTask}
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
