@@ -11,7 +11,8 @@ function App() {
     setInput(event.target.value)
   }
 
-  const addNewTask = () => {
+  const addNewTask = (e) => {
+    e.preventDefault()
     setCounter(counter + 1)
     let task = {
       id: counter,

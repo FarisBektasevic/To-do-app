@@ -15,10 +15,15 @@ const ToDo = ({
     <>
       <h1>TO DO APP</h1>
       <div className="todo-app">
-        <div className="add-item">
+        <form
+          className="add-item"
+          onSubmit={(e) => {
+            addNewTask(e)
+          }}
+        >
           <input value={input} onChange={(e) => inputChange(e)} type="text" />
-          <button onClick={addNewTask}>Add</button>
-        </div>
+          <button type="submit">Add</button>
+        </form>
         {tasks.map((task, index) => {
           return (
             <div className="task-div" key={task.id}>
